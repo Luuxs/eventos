@@ -310,6 +310,10 @@ class AppManager {
 
     this.#btnNuevoRegistro.addEventListener("click", () => {
       this.#resetForm();
+      // Limpiar selección de eventos
+      this.#eventosSeleccionados = [];
+      this.#dataManager.saveSelectedEvents(this.#eventosSeleccionados);
+      this.#actualizarBotonesEventosUI();
       this.#hidePopup(this.#popupConfirmacion);
     });
 
